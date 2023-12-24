@@ -17,6 +17,7 @@ function solution(arr) {
   //   }
 
   let answer = Math.min(...arr); // 배열을 spread operation으로 펼쳐줘야함!
+  // 아니면 Math.min.apply(null,arr);   -> null : context 가 window 가 된다
 
   return answer;
 }

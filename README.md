@@ -80,7 +80,7 @@ let result3 = arr4.reduce(function (acc, v) {
 
 > `원시타입 데이터` : number, string, null, undefined, boolean, symbol
 
-    `참조 타입 데이터` : array, object, function
+> `참조 타입 데이터` : array, object, function
 
 - **원시타입 데이터** : 입력 받은 값을 직접 스택 메모리에 저장하는 방식. -> 재할당의 경우, 바로 데이터의 값이 변한다. 즉, 원시타입 데이터는 **깊은 복사** 만 가능
 - **참조 타입 데이터** : 할당한 값의 주소를 스택 메모리에 저장. 그리고 실제 데이터의 값은 힙이라는 메모리 공간에 저장

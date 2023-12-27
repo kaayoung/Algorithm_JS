@@ -6,25 +6,15 @@
 첫 번째 줄에 바뀐 단어를 출력한다.
 */
 
-// function solution(s) {
-//   let answer = "";
-//   for (let x of s) {
-//     if (x === "A") answer += "#";
-//     else answer += x;
-//   }
-//   return answer;
-// }
+function solution(s) {
+  let answer = "";
+  for (let x of s) {
+    if (x === "A") answer += "#";
+    else answer += x;
+  }
+  return answer;
+}
 
-// let str = "BANANA";
+let str = "BANANA";
 
-// console.log(solution(str));
-
-let a = [1, 2, 3];
-let b = a;
-b.push(5);
-console.log(a);
-
-let aa = "123";
-let bb = aa;
-bb += "abc";
-console.log(aa);
+console.log(solution(str));

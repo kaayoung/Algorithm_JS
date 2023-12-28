@@ -98,3 +98,29 @@ let bb = aa;
 bb += "abc";
 console.log(aa); // 123
 ```
+
+### 👀 substring() , substr()
+
+###### 1. substring(시작위치, 종료위치?)
+
+```js
+let str = "자바스크립트";
+
+let result = str.substring(0, 2);
+// 결과 : "자바"
+
+var result2 = str.substring(2);
+// 결과 : "스크립트"
+```
+
+###### 2. substr(시작위치, 길이?)
+
+```js
+let str = "자바스크립트";
+
+let result = str.substr(0, 2);
+// 결과 : "자바"
+
+let result2 = str.substr(2);
+// 결과 : "스크립트"
+```

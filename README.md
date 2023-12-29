@@ -124,3 +124,9 @@ let result = str.substr(0, 2);
 let result2 = str.substr(2);
 // 결과 : "스크립트"
 ```
+
+### 👀 Array 초기화 (배열 길이 지정)
+
+```js
+Array.from({ length: 10 }, () => 0);
+```

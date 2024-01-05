@@ -137,6 +137,9 @@ Array.from({ length: 10 }, () => 0);
 let hm = new Map();
 hm.set("B", 1);
 hm.set("B", hm.get("B") + 1);
+
+let am = hm; // 얖은 복사 - 메모리 주소가 복사되어 서로 영향을 준다!!
+let bm = new Map(hm); // 깊은 복사 - 값 자체가 복사되어 서로 영향 없음!!
 ```
 
 - 이 hm 은 key / value 로 이루어짐

@@ -130,3 +130,13 @@ let result2 = str.substr(2);
 ```js
 Array.from({ length: 10 }, () => 0);
 ```
+
+### 👀 HashMap
+
+```js
+let hm = new Map();
+hm.set("B", 1);
+hm.set("B", hm.get("B") + 1);
+```
+
+- 이 hm 은 key / value 로 이루어짐

@@ -12,7 +12,7 @@
 
 function solution(k, arr) {
   let answer = 0,
-    p = k - 1;
+    p = k - 1; // 사실 굳이 p 안해도 됨
   for (let i = 0; i < k; i++) {
     // 첫번째 매출액 (answer) 초기화
     answer += arr[i];

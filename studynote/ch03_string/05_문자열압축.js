@@ -12,6 +12,7 @@ function solution(s) {
   for (let i = 1; i < s.length; i++) {
     if (s[i] === s[i - 1]) {
       cnt++;
+      if (i === s.length - 1 && cnt > 1) answer += cnt + s[i];
       continue;
     }
     if (cnt > 1) {

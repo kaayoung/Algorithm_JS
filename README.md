@@ -143,3 +143,10 @@ let bm = new Map(hm); // 깊은 복사 - 값 자체가 복사되어 서로 영�
 ```
 
 - 이 hm 은 key / value 로 이루어짐
+
+## 🔥 자료구조 with JS
+
+### 👀 Queue
+
+- 원소 추가할 때는 arr.push(x) 해주고
+- 원소 앞에서 뺄 때는 arr.shift() 하기!!

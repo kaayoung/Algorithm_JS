@@ -20,7 +20,7 @@ function solution(n, m) {
 
   for (let x of arr) dfs(x, "", 1);
 
-  return answer_arr.length;
+  return answer_arr;
 }
 
 console.log(solution(4, 3));

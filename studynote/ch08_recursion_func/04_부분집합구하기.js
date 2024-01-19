@@ -8,11 +8,11 @@
 function solution(k) {
   let answer = [];
   function dfs(n, arr) {
-    let arr1 = [...arr, n];
     if (n > k) {
-      arr.length && answer.push(arr);
+      if (arr.length > 0) answer.push(arr);
       return;
     } else {
+      let arr1 = [...arr, n];
       dfs(n + 1, arr);
       dfs(n + 1, arr1);
     }

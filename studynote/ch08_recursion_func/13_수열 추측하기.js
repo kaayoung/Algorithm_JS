@@ -11,7 +11,7 @@ function solution(n, end) {
   let mem_arr = Array.from(Array(n + 1), () => Array(n + 1).fill(0)); // 메모이제이션
   let comb_arr = Array.from({ length: n }, () => 0); // 조합의 배열
 
-  let check = Array.from({ length: n }, () => false); // for 수열 (중복X)
+  let check = Array.from({ length: n + 1 }, () => false); // for 수열 (중복X)
   let arr = Array.from({ length: n }, () => 0); // 순열 저장
 
   let flag = false;

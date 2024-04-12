@@ -18,6 +18,37 @@ const testNum = input.shift();
 
 function solution(n, m, importanceArr) {
   // 개수 , 타겟 ,
+
+  let answer = 0;
+
+  while (importanceArr.length) {
+    let firstImportance = importanceArr.shift();
+    if (firstImportance < Math.max(...importanceArr)) {
+      importanceArr.push(firstImportance);
+      if (m === 0) m = importanceArr.length - 1;
+      else m--;
+    } else {
+      answer++;
+      if (m === 0) break;
+      else m--;
+    }
+  }
+  console.log(answer);
+}
+
+for (let i = 0; i < testNum; i++) {
+  const [n, m] = input.shift().split(" ");
+  const arr = input.shift().split(" ");
+  solution(Number(n), Number(m), arr);
+}
+
+/*
+const fs = require("fs");
+const input = fs.readFileSync("/dev/stdin").toString().split("\n");
+const testNum = input.shift();
+
+function solution(n, m, importanceArr) {
+  // 개수 , 타겟 ,
   const arr = Array.from({ length: n }, (v, k) => k);
   let answer = 0;
 
@@ -47,3 +78,4 @@ for (let i = 0; i < testNum; i++) {
   const arr = input.shift().split(" ");
   solution(n, m, arr);
 }
+*/

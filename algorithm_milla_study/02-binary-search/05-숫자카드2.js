@@ -15,15 +15,7 @@ const M = Number(input[2]);
 const checkCards = input[3].split(" ").map(Number);
 
 function solution(n, hasCards, m, checkCards) {
-  let answer = Array.from({ length: m });
-  hasCards.sort((a, b) => a - b);
-  for (let idx = 0; idx < m; idx++) {
-    const val = checkCards[idx];
-    // for (let val of checkCards) {
-    let left = 0,
-      right = n - 1;
-    let start = -1,
-      end = -1;
+  function getStartIdx(val, left, right, start) {
     while (left <= right) {
       let mid = Math.floor((left + right) / 2);
       if (hasCards[mid] === val) {
@@ -32,10 +24,9 @@ function solution(n, hasCards, m, checkCards) {
       } else if (hasCards[mid] > val) right = mid - 1;
       else left = mid + 1;
     }
-    if (start < 0) {
-      answer[idx] = 0;
-      continue;
-    }
+    return start;
+  }
+  function getEndIdx(val, left, right, end) {
     while (left <= right) {
       let mid = Math.floor((left + right) / 2);
       if (hasCards[mid] === val) {
@@ -44,15 +35,33 @@ function solution(n, hasCards, m, checkCards) {
       } else if (hasCards[mid] > val) right = mid - 1;
       else left = mid + 1;
     }
+    return end;
+  }
+  let answer = Array.from({ length: m });
+  hasCards.sort((a, b) => a - b);
+  for (let idx = 0; idx < m; idx++) {
+    const val = checkCards[idx];
+
+    let start = -1,
+      end = -1;
+    start = getStartIdx(val, 0, n - 1, -1);
+
+    if (start < 0) {
+      answer[idx] = 0;
+      continue;
+    }
+    end = getEndIdx(val, 0, n - 1, -1);
+
     answer[idx] = end - start + 1;
   }
   console.log(answer.join(" "));
 }
+
+solution(N, hasCards, M, checkCards);
+
 solution(
   10,
   [6, 3, 2, 10, 10, 10, -10, -10, 7, 3],
   8,
   [10, 9, -5, 2, 3, 4, 5, -10]
 );
-
-solution(N, hasCards, M, checkCards);

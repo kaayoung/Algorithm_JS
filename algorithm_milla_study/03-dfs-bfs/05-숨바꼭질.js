@@ -2,13 +2,9 @@
 - 백준 1697
 https://www.acmicpc.net/problem/1697
 */
-
-const [N, M] = require("fs")
-  .readFileSync("/dev/stdin")
-  .toString()
-  .trim()
-  .split(" ")
-  .map(Number);
+const fs = require("fs");
+const input = fs.readFileSync("/dev/stdin").toString().split("\n");
+const [N, M] = input[0].split(" ").map(Number);
 
 function solution(n, m) {
   const visited = Array.from({ length: 10 ** 5 + 1 }, () => false);
